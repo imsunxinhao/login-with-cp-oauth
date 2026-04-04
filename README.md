@@ -1,7 +1,8 @@
 # login-with-cp-oauth
 
 为你的 Hydro 添加使用 CP OAuth 登录！
-
+> [!NOTE]
+> 该插件部分代码使用 AI 生成。
 ## 快速开始
 在您安装之前，请您[创建应用](https://auth.luogu.me/developer)。
 ```
