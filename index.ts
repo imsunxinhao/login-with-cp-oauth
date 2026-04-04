@@ -3,7 +3,7 @@ import {
     TokenModel, UserFacingError, ValidationError,
 } from 'hydrooj';
 
-const icon = '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#E5E7EB"/><text x="50" y="68" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold" fill="#4B5563" text-anchor="middle">CP</text></svg>';
+const icon = '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="32" y="42" font-family="monospace, sans-serif" font-weight="900" font-size="32" fill="#000000" text-anchor="middle">CP</text><circle cx="50" cy="42" r="3" fill="#000000"/></svg>';
 
 export default class LoginWithCPOAuthService extends Service {
     static inject = ['oauth'];
