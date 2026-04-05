@@ -10,7 +10,7 @@ export default class LoginWithCPOAuthService extends Service {
     static Config = Schema.object({
         id: Schema.string().description('CP OAuth ID').required(),
         secret: Schema.string().description('CP OAuth Secret').role('secret').required(),
-        endpoint: Schema.string().description('CP OAuth Endpoint').default('https://auth.luogu.me'),
+        endpoint: Schema.string().description('CP OAuth Endpoint').default('https://www.cpoauth.com'),
         canRegister: Schema.boolean().default(true),
     });
 
@@ -19,7 +19,7 @@ export default class LoginWithCPOAuthService extends Service {
 
         // 定义 get 函数：当用户点击登录按钮时执行
         const getHandler = async function(this: Handler) {
-            const endpoint = config.endpoint || 'https://auth.luogu.me';
+            const endpoint = config.endpoint || 'https://www.cpoauth.com';
             const redirectUri = `${SystemModel.get('server.url')}oauth/cpoauth/callback`;
 
             const [state] = await TokenModel.add(TokenModel.TYPE_OAUTH, 600, { redirect: this.request.referer });
@@ -38,7 +38,7 @@ export default class LoginWithCPOAuthService extends Service {
             if (!s) throw new ValidationError('token');
 
             const url = SystemModel.get('server.url');
-            const endpoint = config.endpoint || 'https://auth.luogu.me';
+            const endpoint = config.endpoint || 'https://www.cpoauth.com';
 
             // 使用 code 换取 access_token
             const res = await superagent.post(`${endpoint}/api/oauth/token`)
